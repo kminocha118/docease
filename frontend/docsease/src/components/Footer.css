@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #473131;
+    background-color: #A50034;
      
   }
   
@@ -23,3 +23,10 @@
     
     color: #fffbfb; 
     margin-right: 10px;}
+  
+    .footer-bottom {
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      font-size: 13px;
+      color: #888;
+    }

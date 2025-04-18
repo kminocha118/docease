@@ -1,15 +1,20 @@
 import React from "react";
 import "./Footer.css"; // Import the CSS file
- // Update with the correct path to your image
+import logo from "./assets/LG-Logo.jpg"; // Adjust path based on your project structure
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <p class="footer-text">Powered by</p>
-      <img src="/assets/LG-Logo-759x500.jpg" alt="Logo" className="footer-logo" />
-      <p class="footer-text">Electronics</p>
+      <p className="footer-text">Powered by</p>
+      <img src={logo} alt="Logo" className="footer-logo" />
+      <p className="footer-text">Electronics</p>
+      <p className="footer-text">Developed by Khushman Minocha (Intern)</p>
+      <div className="footer-bottom">
+        <p>© 2025 Docsease. All rights reserved.</p>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
+

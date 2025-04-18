@@ -23,6 +23,7 @@ urlpatterns = [
     path("api/", include("documents.urls")),
     path('api/users/', include('users.urls')),
     path('', include('documents.urls')),
+    path('api/', include('users.urls'))
 ]
 
 if settings.DEBUG:

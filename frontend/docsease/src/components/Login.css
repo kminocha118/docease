@@ -1,55 +1,118 @@
+/* Centered Login Container */
 .login-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    text-align: center;
-    background: #01117d;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
+  margin: 120px auto; /* Increased margin-top to avoid overlap */
+  padding: 40px; /* More padding for spacing */
+  text-align: center;
+  background: linear-gradient(to bottom, #A50034, #750024); /* LG Red Gradient */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Title Styling */
+h2 {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 25px; /* Added margin to prevent overlap */
+}
+
+/* Input Group */
+.input-group {
+  width: 100%;
+  margin-bottom: 25px; /* More space between input fields */
+  text-align: left;
+  color: #750024;
+  display: flex;
+  flex-direction: column; /* Ensures proper spacing */
+}
+
+/* Label Styling */
+label {
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px; /* Extra spacing under labels */
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: #f8f8f8;
+  color: #333;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 15px; /* Extra spacing between inputs */
+}
+
+/* Focus Effect for Input Fields */
+input:focus {
+  border-color: #A50034;
+  outline: none;
+  box-shadow: 0 0 8px rgba(165, 0, 52, 0.5);
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #424242, #2E2E2E); /* LG Dark Gray */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px; /* Ensures button does not overlap input fields */
+}
+
+/* Button Hover Effect */
+.login-button:hover {
+  background: linear-gradient(to right, #A50034, #750024); /* LG Red */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Press (Click) Animation */
+.login-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Error Message */
+.error {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 15px; /* More spacing from the button */
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-container {
+      width: 90%;
+      padding: 30px;
+      margin: 100px auto; /* Adjusted spacing for mobile */
   }
-  
-  h2 {
-    color: #ffffff;
-  }
-  
-  .input-group {
-    margin: 15px 0;
-    text-align: left;
-  }
-  
-  label {
-    display: block;
-    font-size: 14px;
-    color: #fffbfb;
-  }
-  
+
   input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+      font-size: 14px;
   }
-  
+
   .login-button {
-    width: 100%;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+      font-size: 14px;
+      padding: 12px;
   }
-  
-  .login-button:hover {
-    background: #0056b3;
-  }
-  
-  .error {
-    color: red;
-    font-size: 14px;
-  }
-  
+}

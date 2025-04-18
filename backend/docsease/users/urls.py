@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import RegisterView
-from .views import LoginView
+from .views import RegisterUserView, LoginView
 
 urlpatterns = [
-    path('register/', RegisterView.as_view(), name='register'),
-    path('login/', LoginView.as_view(), name='login'),
+    path('register/', RegisterUserView.as_view(), name='register'),  # Admin-only user creation
+    path('login/', LoginView.as_view(), name='login'),               # Staff-only login
 ]

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 
+AUTH_USER_MODEL = 'users.CustomUser'
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -144,7 +145,7 @@ REST_FRAMEWORK = {
     ),
 }
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3003",  # React frontend
+    "http://localhost:3000",  # React frontend
 ]
 
 

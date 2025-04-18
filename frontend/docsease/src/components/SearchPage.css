@@ -1,107 +1,152 @@
-/* Container for the search page */
+/* Search Page Container */
 .search-page {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    
-  }
-  
-  input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px 15px;
-    background-color:#5f3434 ;
-    color: rgba(125, 37, 37, 0.534);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  button:hover {
-    background-color: #5f343494;
-  }
-  
-  /* File list container */
-  .file-list {
-    margin-top: 20px;
-  }
-  
-  .file-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-  }
-  
-  .file-item p {
-    margin: 0;
-    font-weight: 500;
-  }
-  
-  .file-item button {
-    margin-left: 10px;
-    padding: 8px 12px;
-    background-color: #28a745;
-  }
-  
-  .file-item button:hover {
-    background-color: #218838;
-  }
-  
-  /* Modal styling */
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 80%;
-    max-width: 900px;
-  }
-  
-  .modal iframe {
-    width: 100%;
-    height: 500px;
-  }
-  
-  .close-button {
-    float: right;
-    background-color: red;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .close-button:hover {
-    background-color: darkred;
-  }
-  
-  /* Overlay to make modal stand out */
-  .modal-overlay {
-    position: fixed;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px; /* More vertical padding */
+  max-width: 800px;
+  margin: 100px auto; /* Increased margin above and below */
+  text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5); /* Light LG Theme */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Search Title */
+h2 {
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px; /* More space below heading */
+}
+
+/* Search Input */
+input[type="text"] {
+  width: 70%;
+  padding: 14px;
+  border: 2px solid #A50034; /* LG Red */
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  color: #333;
+}
+
+/* Input Focus */
+input[type="text"]:focus {
+  border-color: #750024; /* Darker LG Red */
+  outline: none;
+  box-shadow: 0 0 8px rgba(165, 0, 52, 0.4);
+}
+
+/* Search Button */
+button {
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #424242, #2E2E2E); /* LG Dark Gray */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px; /* More margin above button */
+}
+
+/* Search Button Hover Effect */
+button:hover {
+  background: linear-gradient(to right, #A50034, #750024); /* LG Red */
+  transform: scale(1.05);
+}
+
+/* File List Container */
+.file-list {
+  margin-top: 50px; /* More space above file list */
+}
+
+/* File Item */
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* File Name */
+.file-item p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* File Download Button */
+.file-item button {
+  background-color: #28a745;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.file-item button:hover {
+  background-color: #218838;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Close Button */
+.close-button {
+  float: right;
+  background-color: red;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-page {
+      width: 90%;
+      padding: 25px;
+      margin: 80px auto; /* Adjusted margin for smaller screens */
   }
 
-  
+  input[type="text"] {
+      width: 100%;
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 10px 15px;
+  }
+
+  .file-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .file-item button {
+      margin-top: 10px;
+      width: 100%;
+  }
+}

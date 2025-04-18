@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './UploadForm.css';
+import './UploadForm.css'; // You can reuse the same styling
 
-const UploadForm = () => {
+const OffroleUploadForm = () => {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [empId, setEmpId] = useState('');
@@ -37,7 +37,7 @@ const UploadForm = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/upload/onrole/',
+        'http://localhost:8000/api/upload/offrole/', // 🔁 Off-role endpoint
         formData,
         {
           headers: {
@@ -59,7 +59,7 @@ const UploadForm = () => {
 
   return (
     <div className="upload-form">
-      <h1>Upload On-role Employee Documents</h1>
+      <h1>Upload Off-role Employee Documents</h1>
       <form onSubmit={handleUpload}>
         <input
           type="text"
@@ -81,5 +81,4 @@ const UploadForm = () => {
   );
 };
 
-export default UploadForm;
-
+export default OffroleUploadForm;
