@@ -4,7 +4,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 User = get_user_model()
 
-# Serializer for creating a user (used by admin)
+
 class UserCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -18,13 +18,13 @@ class UserCreateSerializer(serializers.ModelSerializer):
         )
         return user
 
-# Serializer for displaying user info if needed (optional)
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username']
 
-# JWT token serializer (unchanged)
+
 class TokenSerializer(serializers.Serializer):
     refresh = serializers.CharField()
     access = serializers.CharField()

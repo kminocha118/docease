@@ -1,6 +1,6 @@
 import React from "react";
-import "./Footer.css"; // Import the CSS file
-import logo from "./assets/LG-Logo.jpg"; // Adjust path based on your project structure
+import "./Footer.css"; 
+import logo from "./assets/LG-Logo.jpg"; 
 
 const Footer = () => {
   return (

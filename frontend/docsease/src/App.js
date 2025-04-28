@@ -21,7 +21,7 @@ function App() {
       setIsAuthenticated(!!localStorage.getItem("token"));
     };
 
-    window.addEventListener("storage", checkAuth); // Listen for token changes
+    window.addEventListener("storage", checkAuth); 
 
     return () => {
       window.removeEventListener("storage", checkAuth);

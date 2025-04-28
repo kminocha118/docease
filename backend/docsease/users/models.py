@@ -3,16 +3,16 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
-
+    is_approved = models.BooleanField(default=False)
     groups = models.ManyToManyField(
         'auth.Group',
-        related_name='custom_user_groups',  # Add related_name
+        related_name='custom_user_groups',  
         blank=True
     )
 
     user_permissions = models.ManyToManyField(
         'auth.Permission',
-        related_name='custom_user_permissions',  # Add related_name
+        related_name='custom_user_permissions', 
         blank=True
     )
 

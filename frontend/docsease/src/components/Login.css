@@ -1,118 +1,134 @@
-/* Centered Login Container */
 .login-container {
   width: 100%;
   max-width: 420px;
-  margin: 120px auto; /* Increased margin-top to avoid overlap */
-  padding: 40px; /* More padding for spacing */
+  margin: 120px auto;
+  padding: 100px;
   text-align: center;
-  background: linear-gradient(to bottom, #A50034, #750024); /* LG Red Gradient */
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #A50034, #750024);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   position: relative;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-/* Title Styling */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 h2 {
   color: #ffffff;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
   letter-spacing: 1px;
-  margin-bottom: 25px; /* Added margin to prevent overlap */
+  margin-bottom: 30px;
 }
 
-/* Input Group */
+h2 span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffccd5;
+  letter-spacing: 0.5px;
+}
+
 .input-group {
   width: 100%;
-  margin-bottom: 25px; /* More space between input fields */
+  margin-bottom: 25px;
   text-align: left;
-  color: #750024;
   display: flex;
-  flex-direction: column; /* Ensures proper spacing */
+  flex-direction: column;
 }
 
-/* Label Styling */
 label {
-  display: block;
   font-size: 14px;
-  color: #ffffff;
-  font-weight: bold;
-  margin-bottom: 10px; /* Extra spacing under labels */
+  color: #090909;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-/* Input Fields */
 input {
   width: 100%;
   padding: 14px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #333;
-  font-size: 16px;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-bottom: 15px; /* Extra spacing between inputs */
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Focus Effect for Input Fields */
 input:focus {
-  border-color: #A50034;
+  border-color: #ff6b81;
   outline: none;
-  box-shadow: 0 0 8px rgba(165, 0, 52, 0.5);
+  box-shadow: 0 0 8px rgba(255, 107, 129, 0.6);
 }
 
-/* Login Button */
 .login-button {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(to right, #424242, #2E2E2E); /* LG Dark Gray */
-  color: white;
+  background: linear-gradient(to right, #333333, #1e1e1e);
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 20px; /* Ensures button does not overlap input fields */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
 }
 
-/* Button Hover Effect */
 .login-button:hover {
-  background: linear-gradient(to right, #A50034, #750024); /* LG Red */
+  background: linear-gradient(to right, #A50034, #750024);
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
-/* Press (Click) Animation */
 .login-button:active {
   transform: scale(0.98);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Error Message */
 .error {
   color: #ff4d4d;
   font-size: 14px;
-  margin-top: 15px; /* More spacing from the button */
+  margin-top: 15px;
   text-align: center;
+  animation: shake 0.3s ease-in-out;
 }
 
-/* Responsive Design */
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+
 @media (max-width: 768px) {
   .login-container {
-      width: 90%;
-      padding: 30px;
-      margin: 100px auto; /* Adjusted spacing for mobile */
+    width: 90%;
+    padding: 30px;
+    margin: 100px auto;
   }
 
   input {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .login-button {
-      font-size: 14px;
-      padding: 12px;
+    font-size: 14px;
+    padding: 12px;
   }
 }

@@ -12,7 +12,7 @@ User = get_user_model()
 class RegisterUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserCreateSerializer
-    permission_classes = [IsAdminUser]  # Only admin can register users
+    permission_classes = [IsAdminUser] 
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -26,7 +26,7 @@ class RegisterUserView(generics.CreateAPIView):
         }
         return Response(token_data, status=status.HTTP_201_CREATED)
 
-# Login view for users
+
 class LoginView(APIView):
     def post(self, request):
         username = request.data.get("username")
@@ -34,7 +34,7 @@ class LoginView(APIView):
 
         user = authenticate(username=username, password=password)
 
-        if user is not None and user.is_staff:  # Only staff can log in
+        if user is not None and user.is_staff:  
             refresh = RefreshToken.for_user(user)
             return Response({
                 "refresh": str(refresh),

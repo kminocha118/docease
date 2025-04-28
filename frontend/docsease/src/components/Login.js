@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import { motion } from "framer-motion";
 
 const Login = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState("");
@@ -40,16 +41,39 @@ const Login = ({ setIsAuthenticated }) => {
   };
 
   return (
-    <div className="login-container">
-      <h2>
+    <motion.div
+      className="login-container"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         Login to Docsease
         <br />
         <span>Powered By LG Electronics</span>
-      </h2>
+      </motion.h2>
 
-      {error && <p className="error">{error}</p>}
+      {error && (
+        <motion.p
+          className="error"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          {error}
+        </motion.p>
+      )}
 
-      <form onSubmit={handleLogin}>
+      <motion.form
+        onSubmit={handleLogin}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <div className="input-group">
           <label>Username:</label>
           <input
@@ -71,12 +95,25 @@ const Login = ({ setIsAuthenticated }) => {
             placeholder="Enter your password"
           />
         </div>
+        <div classname="admin">
+          <p> Forgot your Email or Password ?</p>
+          <br></br>
+          <p> Contact your Admin!</p>
 
-        <button type="submit" className="login-button" disabled={loading}>
+        </div>
+        
+
+        <motion.button
+          type="submit"
+          className="login-button"
+          disabled={loading}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           {loading ? "Logging in..." : "Login"}
-        </button>
-      </form>
-    </div>
+        </motion.button>
+      </motion.form>
+    </motion.div>
   );
 };
 

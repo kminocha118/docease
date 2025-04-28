@@ -1,10 +1,10 @@
 from django.db import models
 
-# Function to store on-role employee documents
+#  on-role employee documents
 def upload_to_onrole(instance, filename):
     return f'onrole_employees/{filename}'
 
-# Function to store off-role employee documents
+#  off-role employee documents
 def upload_to_offrole(instance, filename):
     return f'offrole_employees/{filename}'
 

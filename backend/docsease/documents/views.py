@@ -5,14 +5,14 @@ from django.core.files.base import ContentFile
 from django.conf import settings
 import os
 
-# ----------- ON-ROLE UPLOAD -----------
+#onrole
 @csrf_exempt
 def upload_onrole_file(request):
     if request.method == 'POST' and request.FILES.get('file') and request.POST.get('emp_id'):
         emp_id = request.POST['emp_id']
         file = request.FILES['file']
 
-        # Save under media/onrole_employees/{emp_id}/filename
+     
         folder_path = f"onrole_employees/{emp_id}/{file.name}"
         file_name = default_storage.save(folder_path, ContentFile(file.read()))
         file_url = default_storage.url(file_name)
@@ -22,14 +22,14 @@ def upload_onrole_file(request):
     return JsonResponse({"error": "No file uploaded or Employee ID missing"}, status=400)
 
 
-# ----------- OFF-ROLE UPLOAD -----------
+# offrole
 @csrf_exempt
 def upload_offrole_file(request):
     if request.method == 'POST' and request.FILES.get('file') and request.POST.get('emp_id'):
         emp_id = request.POST['emp_id']
         file = request.FILES['file']
 
-        # Save under media/offrole_employees/{emp_id}/filename
+        
         folder_path = f"offrole_employees/{emp_id}/{file.name}"
         file_name = default_storage.save(folder_path, ContentFile(file.read()))
         file_url = default_storage.url(file_name)
@@ -43,7 +43,7 @@ def upload_offrole_file(request):
 def search_files(request, emp_id):
     file_urls = []
 
-    # Check both on-role and off-role folders
+    
     for role in ["onrole_employees", "offrole_employees"]:
         emp_folder_path = os.path.join(settings.MEDIA_ROOT, role, emp_id)
 

@@ -4,26 +4,26 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #F0F0F0, #D7D7D7); /* Light Gray Gradient */
+  background: linear-gradient(to bottom, #F0F0F0, #D7D7D7); 
   font-family: "Arial", sans-serif;
-  color: #333; /* Dark Text for readability */
+  color: #333; 
 }
 
 h1 {
   margin-bottom: 20px;
-  color: #A50034; /* LG Red */
+  color: #A50034; 
   font-size: 28px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Upload Form Styling */
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  background: #ffffff; /* White background for contrast */
+  background: #ffffff; 
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@ form {
   width: 100%;
 }
 
-/* Input Fields */
+
 input {
   width: 100%;
   padding: 12px;
@@ -42,15 +42,15 @@ input {
 }
 
 input:focus {
-  border-color: #A50034; /* LG Red */
+  border-color: #A50034; 
   outline: none;
 }
 
-/* Upload Button */
+
 button {
   width: 100%;
   padding: 12px;
-  background: #424242; /* LG Dark Gray */
+  background: #424242; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -61,16 +61,16 @@ button {
 }
 
 button:hover {
-  background: #A50034; /* LG Red */
+  background: #A50034; 
 }
 
-/* Search Navigation */
+
 .navigate-search {
   margin-top: 20px;
 }
 
 .search-button {
-  background-color: #A50034; /* LG Red */
+  background-color: #A50034; 
   color: white;
   padding: 10px 20px;
   border: none;
@@ -83,14 +83,14 @@ button:hover {
 }
 
 .search-button:hover {
-  background-color: #750024; /* Darker LG Red */
+  background-color: #750024;
 }
 
 /* Logout Button */
 .logout-button {
   margin-top: 20px;
   padding: 12px;
-  background-color: #D32F2F; /* Slightly lighter red for warning */
+  background-color: #D32F2F;
   color: white;
   border: none;
   cursor: pointer;
@@ -101,10 +101,10 @@ button:hover {
 }
 
 .logout-button:hover {
-  background-color: #A50034; /* LG Red */
+  background-color: #A50034;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   form {
       width: 90%;

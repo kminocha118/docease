@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 import logo from './assets/docsease.png';
 
-
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/login');
-  };
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
   };
 
   return (
@@ -25,16 +21,29 @@ const Navbar = () => {
       </div>
 
       <ul className="nav-links">
-        
-
-        <li className="dropdown">
-          <button className="dropbtn" onClick={toggleDropdown}>
-            Upload
+        <li
+          className="dropdown"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <button className="dropbtn">
+            Upload ▾
           </button>
-          <ul className={`dropdown-content ${dropdownOpen ? 'show' : ''}`}>
-            <li><Link to="/upload">On-role Employee</Link></li>
-            <li><Link to="/offrole">Off-role Employee</Link></li>
-          </ul>
+
+          <AnimatePresence>
+            {hovered && (
+              <motion.ul
+                className="dropdown-content show"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2 }}
+              >
+                <li><Link to="/upload">On-role Employee</Link></li>
+                <li><Link to="/offrole">Off-role Employee</Link></li>
+              </motion.ul>
+            )}
+          </AnimatePresence>
         </li>
 
         <li><Link to="/search">Search</Link></li>

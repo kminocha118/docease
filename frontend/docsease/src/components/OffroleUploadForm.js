@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './UploadForm.css'; // You can reuse the same styling
+import './UploadForm.css'; 
 
 const OffroleUploadForm = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const OffroleUploadForm = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/upload/offrole/', // 🔁 Off-role endpoint
+        'http://localhost:8000/api/upload/offrole/', 
         formData,
         {
           headers: {
